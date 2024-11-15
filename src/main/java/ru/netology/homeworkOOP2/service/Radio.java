@@ -1,7 +1,15 @@
 package ru.netology.homeworkOOP2.service;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Data
 public class Radio {
+    @Getter
     private int currentStationNumber;
+    @Getter
     private int volumeOfSound;
     private int numberStation;
 
@@ -11,14 +19,6 @@ public class Radio {
 
     public Radio() {
         this.numberStation = 10;
-    }
-
-    public int getCurrentStationNumber() {
-        return currentStationNumber;
-    }
-
-    public int getVolumeOfSound() {
-        return volumeOfSound;
     }
 
     public void setStationNumber(int stationNumber) {
