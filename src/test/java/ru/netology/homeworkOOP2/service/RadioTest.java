@@ -155,4 +155,28 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void shouldSetNumberStation() {
+        Radio radio = new Radio(15);
+
+        radio.setStationNumber(14);
+
+        int expected = 14;
+        int actual = radio.getCurrentStationNumber();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldNotSetNumberStation() {
+        Radio radio = new Radio(15);
+
+        radio.setStationNumber(15);
+
+        int expected = 0;
+        int actual = radio.getCurrentStationNumber();
+
+        Assertions.assertEquals(expected, actual);
+    }
 }
