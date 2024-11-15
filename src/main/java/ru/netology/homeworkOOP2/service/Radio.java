@@ -3,6 +3,15 @@ package ru.netology.homeworkOOP2.service;
 public class Radio {
     private int currentStationNumber;
     private int volumeOfSound;
+    private int numberStation;
+
+    public Radio(int numberStation) {
+        this.numberStation = numberStation;
+    }
+
+    public Radio() {
+        this.numberStation = 10;
+    }
 
     public int getCurrentStationNumber() {
         return currentStationNumber;
@@ -13,13 +22,13 @@ public class Radio {
     }
 
     public void setStationNumber(int stationNumber) {
-        if (stationNumber >= 0 && stationNumber <= 9) {
+        if (stationNumber >= 0 && stationNumber < numberStation) {
             currentStationNumber = stationNumber;
         }
     }
 
     public void nextStation() {
-        if (currentStationNumber == 9) {
+        if (currentStationNumber == numberStation - 1) {
             currentStationNumber = 0;
         } else {
             setStationNumber(currentStationNumber + 1);
@@ -28,7 +37,7 @@ public class Radio {
 
     public void prevStation() {
         if (currentStationNumber == 0) {
-            currentStationNumber = 9;
+            currentStationNumber = numberStation - 1;
         } else {
             setStationNumber(currentStationNumber - 1);
         }
